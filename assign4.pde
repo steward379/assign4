@@ -456,6 +456,7 @@ void keyPressed (){
   
 void keyReleased () {
 
+if (key == CODED) {
   switch ( keyCode ) {
     case UP : 
       upPressed = false ;
@@ -481,6 +482,7 @@ void keyReleased () {
           bullet = 0;
         }
       }  
+    }  
   }
 }
 
