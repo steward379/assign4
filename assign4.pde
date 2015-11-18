@@ -437,52 +437,53 @@ void draw() {
 }
 
 void keyPressed (){
-
-  switch ( keyCode ) {
-    case UP :
-      upPressed = true ;
-      break ;
-    case DOWN :
-      downPressed = true ;
-      break ;
-    case LEFT :
-      leftPressed = true ;
-      break ;
-    case RIGHT :
-      rightPressed = true ;
-      break ;
+  if (key == CODED) {
+    switch ( keyCode ) {
+      case UP :
+        upPressed = true ;
+        break ;
+      case DOWN :
+        downPressed = true ;
+        break ;
+      case LEFT :
+        leftPressed = true ;
+        break ;
+      case RIGHT :
+        rightPressed = true ;
+        break ;
+    }
   }
 }
   
 void keyReleased () {
-
-if (key == CODED) {
-  switch ( keyCode ) {
-    case UP : 
-      upPressed = false ;
-      break ;
-    case DOWN :
-      downPressed = false ;
-      break ;
-    case LEFT :
-      leftPressed = false ;
-      break ;
-    case RIGHT :
-      rightPressed = false ;
-      break ;
-    case ' ' :
-      if(gameState ==  1){
-        if( attackLimit[bullet] == false ) {
-          attackLimit[bullet] = true;
-          attackX[bullet] = fighterX - 10;
-          attackY[bullet] = fighterY + fighter.height/2;
-          bullet ++;
-        }   
-        if( bullet > 4 ) {
-          bullet = 0;
-        }
-      }  
+  if (key == CODED) {
+    switch ( keyCode ) {
+      case UP : 
+        upPressed = false ;
+        break ;
+      case DOWN :
+        downPressed = false ;
+        break ;
+      case LEFT :
+        leftPressed = false ;
+        break ;
+      case RIGHT :
+        rightPressed = false ;
+        break ;
     }  
+  }  
+  if ( keyCode == ' ' ){
+    if ( gameState ==  1 ){
+      if ( attackLimit[bullet] == false ) {
+        attackLimit[bullet] = true;
+        attackX[bullet] = fighterX - 10;
+        attackY[bullet] = fighterY + fighter.height/2;
+        bullet ++;
+      }   
+      if ( bullet > 4 ) {
+        bullet = 0;
+      }
+    }
   }
 }
 
