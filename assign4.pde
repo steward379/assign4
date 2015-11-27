@@ -413,7 +413,7 @@ void draw() {
           && fighterY >= treasureY - fighter.height
           && fighterY <= treasureY + treasure.height) {
             
-          if (hpBar < HP_MAX) {
+          if (hpBar <= HP_MAX) {
             if (hpBar < HP_MAX) {
               hpBar += 10 * HP_PERCENT;
             }
